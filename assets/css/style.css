@@ -534,61 +534,27 @@
             margin-top: var(--space-6);
         }
 
-        .cases-grid {
-        display: grid;
-        gap: var(--space-8);
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .case-card {
-        display: flex;
-        flex-direction: column;
-        background: var(--white);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: var(--shadow-card);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-decoration: none;
-        }
-
-        .case-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-elegant);
-        }
-
-        .case-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        }
-
-        .case-info {
-        padding: var(--space-4);
-        }
-
-        .case-category {
-        display: block;
-        font-size: 0.875rem;
-        color: var(--gray-500);
-        margin-bottom: var(--space-2);
-        }
-
-        .case-title {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--brand-secondary);
-        line-height: 1.4;
-        }
-
-
         .services {
             padding: var(--space-20) 0;
-            background: var(--gradient-subtle);
         }
 
         .cases-preview {
-            padding: var(--space-20) 0;
-            background: var(--white);
+        padding: var(--space-20) 0;
+        background: var(--white);
+        }
+
+        .cases-preview .cases-grid {
+            display: grid;
+            gap: var(--space-8);
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            margin-bottom: var(--space-12);
+        }
+
+        @media (max-width: 768px) {
+            .cases-preview .cases-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
         }
 
         .section-header {
@@ -690,13 +656,6 @@
         .gradient-teal { background: var(--gradient-teal); }
         .gradient-pink { background: var(--gradient-pink); }
 
-        .service-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--brand-secondary);
-            margin-bottom: var(--space-3);
-            transition: var(--transition-base);
-        }
 
         .service-card:hover .service-title {
             color: var(--brand-primary);
@@ -747,6 +706,7 @@
             transition: var(--transition-smooth);
         }
 
+
         .service-card.expanded .expand-icon {
             transform: rotate(180deg);
         }
@@ -794,33 +754,6 @@
             flex-shrink: 0;
         }
 
-        .cases-grid {
-            display: grid;
-            gap: var(--space-8);
-            margin-bottom: var(--space-12);
-        }
-
-        @media (min-width: 768px) {
-            .cases-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .case-card {
-            background: var(--white);
-            border: 2px solid var(--gray-100);
-            border-radius: var(--radius-2xl);
-            padding: var(--space-6);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .case-card:hover {
-            box-shadow: var(--shadow-elegant);
-            border-color: hsla(213, 100%, 35%, 0.2);
-            transform: translateY(-4px);
-        }
 
         .gradient-bg-blue { background: var(--gradient-bg-blue); }
         .gradient-bg-green { background: var(--gradient-bg-green); }
@@ -863,9 +796,6 @@
             transition: var(--transition-base);
         }
 
-        .case-card:hover .case-title {
-            color: var(--brand-primary);
-        }
 
         .case-description {
             font-size: 0.875rem;
@@ -1037,17 +967,6 @@
             padding: var(--space-12) 0;
         }
 
-        .links-grid {
-            display: grid;
-            gap: var(--space-8);
-        }
-
-        @media (min-width: 768px) {
-            .links-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
         .footer-column-title {
             font-family: var(--font-heading);
             font-weight: 700;
@@ -1066,6 +985,304 @@
             display: flex;
             gap: var(--space-3);
         }
+
+        /* ===== ABOUT US SECTION ===== */
+.about-us {
+    padding: var(--space-20) 0;
+    background: var(--brand-light);
+}
+
+.about-content {
+    margin-bottom: var(--space-16);
+}
+
+.about-text {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Статистика */
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+    text-align: center;
+}
+
+.highlight-item {
+    background: var(--white);
+    padding: var(--space-6);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+}
+
+.highlight-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+}
+
+.highlight-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--brand-primary);
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-2);
+}
+
+.highlight-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.about-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Команда */
+.team-grid {
+    display: grid;
+    gap: var(--space-10);
+    grid-template-columns: 1fr;
+    margin-bottom: var(--space-16);
+}
+
+@media (min-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.team-member {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elegant);
+}
+
+.member-photo {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.1);
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+    opacity: 0;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-member:hover .member-overlay {
+    opacity: 0.9;
+}
+
+.member-social {
+    display: flex;
+    gap: var(--space-3);
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.team-member:hover .member-social {
+    transform: translateY(0);
+}
+
+.member-social .social-link {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+    backdrop-filter: blur(8px);
+}
+
+.member-social .social-link:hover {
+    background: var(--white);
+    color: var(--brand-primary);
+    transform: scale(1.1);
+}
+
+.member-social .social-link i {
+    width: 20px;
+    height: 20px;
+}
+
+.member-info {
+    padding: var(--space-6);
+}
+
+.member-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.member-position {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--brand-primary);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-bottom: var(--space-3);
+}
+
+.skill-tag {
+    font-size: 0.75rem;
+    padding: var(--space-1) var(--space-2);
+    background: var(--brand-light);
+    color: var(--brand-primary);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    border: 1px solid var(--brand-primary);
+}
+
+.member-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+.highlight-number {
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+.highlight-item {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    will-change: transform, box-shadow;
+}
+
+@keyframes countUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.highlight-number.animating {
+    animation: countUp 0.6s ease-out;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .about-highlights {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .highlight-item {
+        padding: var(--space-4);
+    }
+    
+    .highlight-number {
+        font-size: 1.75rem;
+    }
+    
+    .highlight-label {
+        font-size: 0.75rem;
+    }
+    
+    .about-description {
+        font-size: 1rem;
+    }
+    
+    .team-grid {
+        gap: var(--space-6);
+    }
+    
+    .member-photo {
+        height: 240px;
+    }
+    
+    .member-info {
+        padding: var(--space-4);
+    }
+    
+    .member-name {
+        font-size: 1.125rem;
+    }
+    
+    .member-skills {
+        gap: 2px;
+    }
+    
+    .skill-tag {
+        font-size: 0.6875rem;
+        padding: 2px var(--space-1);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-highlights {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    .highlight-item {
+        padding: var(--space-3);
+    }
+    
+    .highlight-number {
+        font-size: 1.5rem;
+    }
+}
 
         .social-link {
             width: 40px;
@@ -1142,62 +1359,118 @@
             .section-description { font-size: 1rem; }
         }
 
-.cases-page {
-    padding: 40px 0;
+
+
+/* Шапка услуги: заголовок слева, картинка справа */
+
+/* Дополнительные стили для страницы кейсов */
+
+/* Сообщение когда кейсы не найдены */
+.no-cases-message {
+    text-align: center;
+    padding: var(--space-16) var(--space-4);
+    grid-column: 1 / -1;
 }
 
-.breadcrumbs {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 16px;
+.no-cases-message p {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    margin: 0;
 }
 
-.cases-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 24px;
+/* Улучшение анимации для карточек кейсов */
+.case-card {
+    transition: all var(--transition-smooth);
 }
 
+.case-card img {
+    transition: transform var(--transition-smooth);
+}
+
+/* Исправление стилей для фильтров */
 .cases-filters {
     display: flex;
-    gap: 12px;
-    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-12);
+    justify-content: center;
 }
 
 .filter-btn {
-    border: 1px solid #ddd;
-    background: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius);
     cursor: pointer;
     font-weight: 500;
-    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    transition: var(--transition-base);
+    color: var(--gray-700);
+    white-space: nowrap;
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-    background: #222;
-    color: #fff;
-    border-color: #222;
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--brand-primary);
+    color: var(--white);
+    border-color: var(--brand-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
 }
 
+/* Исправление сетки кейсов */
 .cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 24px;
+    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-bottom: var(--space-12);
 }
 
+@media (max-width: 768px) {
+    .cases-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .cases-filters {
+        gap: var(--space-2);
+    }
+    
+    .filter-btn {
+        padding: var(--space-1) var(--space-3);
+        font-size: 0.75rem;
+    }
+}
+
+/* Обеспечиваем правильное отображение карточек кейсов */
 .case-card {
-    border-radius: 12px;
+    display: block;
+    background: var(--white);
+    border-radius: var(--radius-xl);
     overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    color: inherit;
     position: relative;
+    height: 250px;
+    opacity: 1;
 }
 
-.case-thumb img {
+.case-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+}
+
+.case-card img {
     width: 100%;
-    height: 240px;
+    height: 100%;
     object-fit: cover;
-    display: block;
+    transition: var(--transition-smooth);
+}
+
+.case-card:hover img {
+    transform: scale(1.05);
 }
 
 .case-info {
@@ -1205,20 +1478,1204 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 16px;
-    color: #fff;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--white);
+    padding: var(--space-6) var(--space-4) var(--space-4) var(--space-4);
 }
 
 .case-category {
-    font-size: 14px;
-    opacity: 0.8;
-    display: block;
-    margin-bottom: 4px;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: var(--space-1) var(--space-2);
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-2);
+    backdrop-filter: blur(4px);
 }
 
 .case-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.single-service{
+    padding:var(--space-20) 0;
+}
+
+.single-service .service-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.single-service .related-services {
+    margin-top: var(--space-20);
+}
+
+.single-service .service-header-text {
+    flex: 1;
+}
+
+.single-service .service-title .service-title h3{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--brand-primary)
+}
+
+.single-service .service-lead {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.single-service .service-header-image {
+    flex: 1;
+    text-align: right;
+}
+
+.single-service .service-header-image img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+/* Основной контент */
+.single-service .service-content {
+    margin-bottom: 60px;
+}
+
+/* Секции ACF */
+.service-section {
+    margin-bottom: 60px;
+}
+.service-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.service-section .section-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+.service-section .section-text {
+    flex: 1;
+}
+.service-section .section-image img {
+    max-width: 400px;
+    border-radius: 12px;
+}
+
+/* CTA кнопки */
+.service-cta {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Блок "Другие услуги" */
+.related-services {
+    margin-top: 80px;
+}
+.related-services h3 {
+    margin-bottom: 100px;
+    text-align:left;
+    color: rgb(0, 119, 255);
+    font-size: 3rem;
+}
+.related-services .services-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.related-services .service-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.related-services .service-card .service-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.related-services .service-card .service-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+/* Стили для перечня услуг в single-service */
+.service-includes {
+    margin: 20px 0;
+}
+
+.service-includes h3 {
     font-size: 18px;
     font-weight: 600;
-    line-height: 1.3;
+    margin-bottom: 12px;
+    color: var(--brand-secondary);
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--gray-600);
+    padding-left: 20px;
+    position: relative;
+}
+
+.service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--brand-accent);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Стили для single-cases (аналогичные single-services) */
+.single-case {
+    padding: var(--space-20) 0;
+}
+
+.breadcrumbs {
+    font-size: 14px;
+    color: var(--gray-600);
+    margin-bottom: var(--space-8);
+}
+
+.breadcrumbs a {
+    color: var(--brand-primary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: var(--gray-400);
+}
+
+/* Шапка кейса */
+.single-case .service-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-16);
+    margin-bottom: var(--space-16);
+}
+
+.single-case .service-header-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-title-header {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--brand-primary);
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+}
+
+.service-title{
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--brand-primary);
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+}
+
+.single-case .service-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--brand-primary);
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+}
+
+.single-case .service-lead {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+    line-height: 1.6;
+}
+
+.single-case .service-header-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.single-case .service-header-image img {
+    width: 100%;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-elegant);
+}
+
+/* Перечень выполненных работ */
+.single-case .service-includes {
+    margin: var(--space-8) 0;
+}
+
+.single-case .service-includes h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--brand-secondary);
+}
+
+.single-case .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.single-case .service-list li {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    padding-left: var(--space-4);
+    position: relative;
+}
+
+.single-case .service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--brand-accent);
+    border-radius: 50%;
+}
+
+/* CTA кнопки */
+.single-case .service-cta {
+    margin-top: var(--space-8);
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+/* Основной контент */
+.single-case .service-content {
+    margin-bottom: var(--space-16);
+}
+
+.single-case .service-content p {
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+}
+
+.single-case .service-content h2,
+.single-case .service-content h3,
+.single-case .service-content h4 {
+    margin: var(--space-8) 0 var(--space-4) 0;
+    color: var(--brand-secondary);
+}
+
+/* Секции ACF */
+.single-case .service-section {
+    margin-bottom: var(--space-16);
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--gray-100);
+}
+
+.single-case .service-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    color: var(--brand-primary);
+}
+
+.single-case .section-body {
+    display: flex;
+    gap: var(--space-8);
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.single-case .section-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.single-case .section-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.single-case .section-image img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Блок "Другие кейсы" */
+.single-case .related-services {
+    margin-top: var(--space-20);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--gray-100);
+}
+
+.single-case .related-services h3 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: left;
+}
+
+.single-case .services-grid {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .single-case .service-header {
+        flex-direction: column;
+        gap: var(--space-8);
+    }
+    
+    .single-case .service-title {
+        font-size: 2rem;
+    }
+    
+    .single-case .section-body {
+        flex-direction: column;
+    }
+    
+    .single-case .related-services h3 {
+        font-size: 2rem;
+    }
+    
+    .single-case .service-cta {
+        flex-direction: column;
+    }
+    
+    .single-case .service-cta .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.footer {
+    background: var(--white);
+    color: var(--gray-900);
+    border-top: 1px solid var(--gray-100);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.footer-logo .logo-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo .logo-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--brand-primary);
+    font-size: 1.125rem;
+}
+
+.footer-column-text {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: 0.875rem;
+    color: var(--gray-700);
+}
+
+.contact-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--brand-primary);
+    flex-shrink: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.social-link {
+    width: 32px;
+    height: 32px;
+    background: var(--gray-100);
+    border: none;
+    color: var(--gray-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    transition: var(--transition-base);
+}
+
+.social-link:hover {
+    color: var(--brand-primary);
+    background: var(--brand-light);
+}
+
+.social-link i {
+    width: 16px;
+    height: 16px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--gray-100);
+    padding: var(--space-4) 0;
+}
+
+.footer-bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--gray-600);
+}
+
+@media (min-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-bottom-link {
+    color: var(--gray-600);
+    font-size: 0.75rem;
+    transition: var(--transition-base);
+}
+
+.footer-bottom-link:hover {
+    color: var(--brand-primary);
+}
+
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ КОНТАКТОВ ===== */
+.contacts-page {
+    padding: var(--space-12) 0;
+    background: var(--white);
+}
+
+.contacts-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.contacts-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--brand-primary);
+    margin-bottom: var(--space-4);
+}
+
+.contacts-description {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contacts-content {
+    display: grid;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+    .contacts-content {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+.contacts-info {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.contact-card {
+    background: var(--white);
+    border: 2px solid var(--gray-100);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--brand-primary);
+}
+
+.contact-icon-large {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4) auto;
+}
+
+.contact-icon-large i {
+    width: 24px;
+    height: 24px;
+    color: var(--white);
+}
+
+.contact-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--brand-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.contact-card p {
+    color: var(--gray-600);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contacts-form {
+    background: var(--brand-light);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    border: 2px solid var(--gray-100);
+}
+
+.form-wrapper {
+    max-width: 100%;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: var(--space-6);
+    text-align: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .contacts-title {
+        font-size: 2rem;
+    }
+    
+    .contacts-description {
+        font-size: 1rem;
+    }
+    
+    .contact-card {
+        padding: var(--space-4);
+    }
+    
+    .contacts-form {
+        padding: var(--space-4);
+    }
+}
+
+.links-grid {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .links-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-12);
+    }
+}
+
+/* Блок 1: Логотип и лозунг */
+.footer-column:first-child {
+    /* Дополнительные стили для первого блока при необходимости */
+}
+
+/* Блок 2: Контакты */
+.footer-column:nth-child(2) .contact-info {
+    margin-bottom: 0;
+}
+
+/* Блок 3: Реквизиты */
+.company-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.company-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.company-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.company-value {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 767px) {
+    .links-grid {
+        gap: var(--space-8);
+    }
+    
+    .footer-column {
+        text-align: center;
+    }
+    
+    .contact-info,
+    .company-info {
+        align-items: center;
+    }
+    
+    .company-item {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* ===== СТИЛИ ДЛЯ CONTACT FORM 7 ===== */
+
+/* Основной контейнер формы */
+.wpcf7 {
+    width: 100%;
+}
+
+.wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* Обнуляем стандартные отступы CF7 */
+.wpcf7 p {
+    margin: 0 !important;
+}
+
+.wpcf7-form p {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.wpcf7-form br {
+    display: none;
+}
+
+.wpcf7-form .wpcf7-form-control-wrap {
+    width: 100%;
+    display: block;
+}
+
+.wpcf7-form .wpcf7-validates-as-required {
+    width: 100% !important;
+}
+
+/* Строка с полями в одну линию */
+.wpcf7-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-4);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .wpcf7-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Группы полей */
+.wpcf7-form .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.wpcf7-form .form-row .form-group {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Все поля ввода */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea {
+    width: 100% !important;
+    padding: var(--space-4) !important;
+    border: 2px solid var(--gray-200) !important;
+    border-radius: var(--radius) !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.875rem !important;
+    transition: all var(--transition-base) !important;
+    background: var(--white) !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+.wpcf7-form input:focus,
+.wpcf7-form textarea:focus {
+    outline: none !important;
+    border-color: var(--brand-primary) !important;
+    box-shadow: 0 0 0 3px hsla(213, 100%, 35%, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Placeholder стили */
+.wpcf7-form input::placeholder,
+.wpcf7-form textarea::placeholder {
+    color: var(--gray-400) !important;
+    opacity: 1 !important;
+}
+
+.wpcf7-form input::-webkit-input-placeholder,
+.wpcf7-form textarea::-webkit-input-placeholder {
+    color: var(--gray-400) !important;
+}
+
+.wpcf7-form input::-moz-placeholder,
+.wpcf7-form textarea::-moz-placeholder {
+    color: var(--gray-400) !important;
+    opacity: 1 !important;
+}
+
+.wpcf7-form input:-ms-input-placeholder,
+.wpcf7-form textarea:-ms-input-placeholder {
+    color: var(--gray-400) !important;
+}
+
+/* Убираем автозаполнение стили */
+.wpcf7-form input:-webkit-autofill,
+.wpcf7-form input:-webkit-autofill:hover,
+.wpcf7-form input:-webkit-autofill:focus {
+    border: 2px solid var(--gray-200) !important;
+    -webkit-text-fill-color: var(--gray-900) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--white) inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Textarea отдельно */
+.wpcf7-form textarea {
+    resize: vertical !important;
+    min-height: 120px !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Чекбокс и согласие - принудительные стили */
+.wpcf7-form .checkbox-group,
+.wpcf7-form .wpcf7-acceptance {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: var(--space-3) !important;
+    margin: var(--space-4) 0 !important;
+    width: 100% !important;
+}
+
+.wpcf7-form .wpcf7-acceptance .wpcf7-list-item,
+.wpcf7-form .checkbox-group .wpcf7-list-item {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: var(--space-3) !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+}
+
+.wpcf7-form .wpcf7-acceptance input[type="checkbox"],
+.wpcf7-form .checkbox-group input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    margin-top: 3px !important;
+    accent-color: var(--brand-primary) !important;
+    cursor: pointer !important;
+    order: 1 !important;
+}
+
+.wpcf7-form .wpcf7-acceptance .wpcf7-list-item-label,
+.wpcf7-form .checkbox-group .wpcf7-list-item-label {
+    font-size: 0.8125rem !important;
+    line-height: 1.5 !important;
+    color: var(--gray-600) !important;
+    margin: 0 !important;
+    flex: 1 !important;
+    cursor: pointer !important;
+    order: 2 !important;
+    margin-left: var(--space-3) !important;
+}
+
+.wpcf7-form .wpcf7-acceptance a,
+.wpcf7-form .checkbox-group a {
+    color: var(--brand-primary) !important;
+    text-decoration: underline !important;
+}
+
+.wpcf7-form .wpcf7-acceptance a:hover,
+.wpcf7-form .checkbox-group a:hover {
+    text-decoration: none !important;
+}
+
+/* Убираем стандартные стили CF7 для чекбокса */
+.wpcf7-form .wpcf7-list-item {
+    margin: 0 !important;
+}
+
+.wpcf7-form .wpcf7-acceptance .wpcf7-list-item-label::before {
+    content: none !important;
+}
+
+.wpcf7-form .checkbox-group label,
+.wpcf7-form .wpcf7-acceptance label {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: var(--space-3) !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.wpcf7-form .checkbox-group *,
+.wpcf7-form .wpcf7-acceptance * {
+    box-sizing: border-box !important;
+}
+
+/* Альтернативный вариант с label span */
+.wpcf7-form .checkbox-group label span {
+    flex: 1 !important;
+    font-size: 0.8125rem !important;
+    line-height: 1.5 !important;
+    color: var(--gray-600) !important;
+    order: 2 !important;
+}
+
+/* Кнопка отправки */
+.wpcf7-form input[type="submit"] {
+    width: 100% !important;
+    padding: var(--space-4) var(--space-6) !important;
+    background: var(--brand-primary) !important;
+    color: var(--white) !important;
+    border: none !important;
+    border-radius: var(--radius) !important;
+    font-family: var(--font-body) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all var(--transition-smooth) !important;
+    margin-top: var(--space-4) !important;
+    box-sizing: border-box !important;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+    background: hsl(213, 100%, 30%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-elegant) !important;
+}
+
+.wpcf7-form input[type="submit"]:active {
+    transform: translateY(0) !important;
+}
+
+/* Состояния валидации */
+.wpcf7-not-valid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.wpcf7-not-valid:focus {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Сообщения об ошибках */
+.wpcf7-not-valid-tip {
+    font-size: 0.75rem !important;
+    color: #ef4444 !important;
+    margin-top: var(--space-1) !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+}
+
+/* Сообщения формы */
+.wpcf7-response-output {
+    padding: var(--space-4) !important;
+    border-radius: var(--radius) !important;
+    margin-top: var(--space-4) !important;
+    margin-bottom: 0 !important;
+    border: none !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+}
+
+.wpcf7-mail-sent-ok {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+.wpcf7-mail-sent-ng,
+.wpcf7-validation-errors {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
+.wpcf7-spam-blocked {
+    background: #f59e0b !important;
+    color: white !important;
+}
+
+/* Спиннер загрузки */
+.wpcf7-spinner {
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid transparent !important;
+    border-top: 2px solid var(--brand-primary) !important;
+    border-radius: 50% !important;
+    animation: spin 1s linear infinite !important;
+    margin-left: var(--space-2) !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Состояние отправки формы */
+.wpcf7-form.submitting input[type="submit"] {
+    opacity: 0.7 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+.wpcf7-form.submitting input[type="submit"]:hover {
+    transform: none !important;
+    background: var(--brand-primary) !important;
+}
+
+/* Дополнительная информация под формой */
+.contacts-additional {
+    margin-top: var(--space-20);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--gray-100);
+}
+
+.additional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-8);
+}
+
+.additional-item {
+    text-align: center;
+    padding: var(--space-6);
+    background: var(--brand-light);
+    border-radius: var(--radius-xl);
+    transition: var(--transition-smooth);
+}
+
+.additional-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.additional-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4) auto;
+}
+
+.additional-icon i {
+    width: 28px;
+    height: 28px;
+    color: var(--white);
+}
+
+.additional-item h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--brand-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.additional-item p {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Состояния валидации для групп */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.error-message {
+    font-size: 0.75rem;
+    color: #ef4444;
+    margin-top: var(--space-1);
+}
+
+.success-message {
+    font-size: 0.75rem;
+    color: #10b981;
+    margin-top: var(--space-1);
+}
+
+/* Анимация загрузки для кнопки */
+@keyframes buttonLoading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn.loading::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: buttonLoading 1s linear infinite;
+    margin-right: var(--space-2);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .contacts-title {
+        font-size: 2rem;
+    }
+    
+    .contacts-description {
+        font-size: 1rem;
+    }
+    
+    .contact-card {
+        padding: var(--space-4);
+    }
+    
+    .contacts-form {
+        padding: var(--space-6);
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+    
+    .additional-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .additional-item {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .wpcf7-form input[type="text"],
+    .wpcf7-form input[type="email"],
+    .wpcf7-form input[type="tel"],
+    .wpcf7-form textarea {
+        font-size: 16px !important; /* Предотвращает зум на iOS */
+    }
+    
+    .wpcf7-form .checkbox-group {
+        gap: var(--space-2) !important;
+    }
+    
+    .wpcf7-form .checkbox-group .wpcf7-list-item-label {
+        font-size: 0.75rem !important;
+    }
+    
+    .wpcf7-form .checkbox-group input[type="checkbox"] {
+        width: 16px !important;
+        height: 16px !important;
+    }
 }

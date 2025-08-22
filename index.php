@@ -98,13 +98,13 @@
                 </div>
                 <h3 class="service-title"><?php the_title(); ?></h3>
                 <p class="service-description"><?php the_excerpt(); ?></p>
-                <div class="service-footer">
-                    <button class="service-more">
-                        Подробнее
-                        <i data-lucide="arrow-right"></i>
-                    </button>
-                    <i data-lucide="chevron-down" class="expand-icon"></i>
-                </div>
+                        <div class="service-footer">
+                            <a href="<?php the_permalink(); ?>" class="service-more">
+                                Подробнее
+                                <i data-lucide="arrow-right"></i>
+                            </a>
+                            <i data-lucide="chevron-down" class="expand-icon"></i>
+                        </div>
                 <div class="service-details">
                     <?php if (!empty($services_array)) : ?>
                     <ul class="service-list">

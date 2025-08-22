@@ -1,110 +1,89 @@
-    <!-- Footer -->
-    <footer class="footer" id="contacts">
-        <!-- Contact Form Section -->
-        <div class="footer-form-section">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-info">
-                        <h3 class="footer-title">Готовы начать?</h3>
-                        <p class="footer-description">
-                            Оставьте заявку, и мы проведем бесплатный аудит вашего проекта 
-                            и предложим решения для роста бизнеса.
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i data-lucide="phone" class="contact-icon"></i>
-                                <span><?php echo get_theme_mod('phone_number', '+7 (999) 123-45-67'); ?></span>
-                            </div>
-                            <div class="contact-item">
-                                <i data-lucide="mail" class="contact-icon"></i>
-                                <span><?php echo get_theme_mod('email_address', 'hello@nereklamnoe.ru'); ?></span>
-                            </div>
-                            <div class="contact-item">
-                                <i data-lucide="map-pin" class="contact-icon"></i>
-                                <span><?php echo get_theme_mod('address', 'Москва, ул. Примерная, 123'); ?></span>
-                            </div>
+<!-- Footer -->
+<footer class="footer" id="contacts">
+    <!-- Links Section -->
+    <div class="footer-links">
+        <div class="container">
+            <div class="links-grid">
+                <!-- Блок 1: Логотип и лозунг -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/png/Logo.png" alt="НеРекламное агентство">
+                        </div>
+                        <span class="logo-text">НеРекламное агентство</span>
+                    </div>
+                    
+                    <p class="footer-column-text">
+                        Комплексный маркетинг для вашего бизнеса с упором на результат.
+                    </p>
+                    
+                    <!-- Социальные сети -->
+                    <div class="social-links">
+                        <a href="https://t.me/off_gold" class="social-link" target="_blank">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 50 50" fill="currentColor">
+                                <path d="M25,2c12.703,0,23,10.297,23,23S37.703,48,25,48S2,37.703,2,25S12.297,2,25,2z M32.934,34.375	c0.423-1.298,2.405-14.234,2.65-16.783c0.074-0.772-0.17-1.285-0.648-1.514c-0.578-0.278-1.434-0.139-2.427,0.219	c-1.362,0.491-18.774,7.884-19.78,8.312c-0.954,0.405-1.856,0.847-1.856,1.487c0,0.45,0.267,0.703,1.003,0.966	c0.766,0.273,2.695,0.858,3.834,1.172c1.097,0.303,2.346,0.04,3.046-0.395c0.742-0.461,9.305-6.191,9.92-6.693	c0.614-0.502,1.104,0.141,0.602,0.644c-0.502,0.502-6.38,6.207-7.155,6.997c-0.941,0.959-0.273,1.953,0.358,2.351	c0.721,0.454,5.906,3.932,6.687,4.49c0.781,0.558,1.573,0.811,2.298,0.811C32.191,36.439,32.573,35.484,32.934,34.375z"/>
+                            </svg>
+                        </a>
+                        <a href="https://vk.com/not_reklama" class="social-link" target="_blank">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 50 50" fill="currentColor">
+                                <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37.72,33l-3.73-0.01 c0,0-0.08,0.01-0.21,0.01c-0.3,0-0.92-0.08-1.65-0.58c-1.31-0.91-2.56-3.17-3.55-3.17c-0.07,0-0.13,0.01-0.19,0.03 c-0.86,0.27-1.12,1.13-1.12,2.18c0,0.37-0.26,0.54-0.96,0.54h-1.93c-2.16,0-4.25-0.05-6.6-2.62c-3.46-3.79-6.7-10.53-6.7-10.53 s-0.18-0.39,0.01-0.62c0.18-0.21,0.6-0.23,0.76-0.23c0.04,0,0.06,0,0.06,0h4c0,0,0.37,0.07,0.64,0.27c0.23,0.17,0.35,0.48,0.35,0.48 s0.68,1.32,1.53,2.81c1.43,2.46,2.2,3.28,2.75,3.28c0.09,0,0.18-0.02,0.27-0.07c0.82-0.45,0.58-4.09,0.58-4.09s0.01-1.32-0.42-1.9 c-0.33-0.46-0.96-0.59-1.24-0.63c-0.22-0.03,0.14-0.55,0.62-0.79c0.62-0.3,1.65-0.36,2.89-0.36h0.6c1.17,0.02,1.2,0.14,1.66,0.25 c1.38,0.33,0.91,1.62,0.91,4.71c0,0.99-0.18,2.38,0.53,2.85c0.05,0.03,0.12,0.05,0.21,0.05c0.46,0,1.45-0.59,3.03-3.26 c0.88-1.52,1.56-3.03,1.56-3.03s0.15-0.27,0.38-0.41c0.22-0.13,0.22-0.13,0.51-0.13h0.03c0.32,0,3.5-0.03,4.2-0.03h0.08 c0.67,0,1.28,0.01,1.39,0.42c0.16,0.62-0.49,1.73-2.2,4.03c-2.82,3.77-3.14,3.49-0.8,5.67c2.24,2.08,2.7,3.09,2.78,3.22 C39.68,32.88,37.72,33,37.72,33z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Блок 2: Контактные данные -->
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Контакты</h3>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i data-lucide="phone" class="contact-icon"></i>
+                            <span>+7 (922) 503 1853</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail" class="contact-icon"></i>
+                            <span>aleksandrmol4@notagency.ru</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="clock" class="contact-icon"></i>
+                            <span>Круглосуточно</span>
                         </div>
                     </div>
-
-                    <div class="footer-form">
-                        <h4 class="form-subtitle">Бесплатная консультация</h4>
-                        <?php echo do_shortcode('[contact-form-7 id="5846c68" title="Контактная форма 1"]'); ?>
-                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Links Section -->
-        <div class="footer-links">
-            <div class="container">
-                <div class="links-grid">
-                    <div class="footer-column">
-                        <h5 class="footer-column-title">НеРекламное агентство</h5>
-                        <p class="footer-column-text">
-                            Комплексный маркетинг для вашего бизнеса с упором на результат.
-                        </p>
-                        <div class="social-links">
-                            <a href="<?php echo get_theme_mod('facebook_url', '#'); ?>" class="social-link">
-                                <i data-lucide="facebook"></i>
-                            </a>
-                            <a href="<?php echo get_theme_mod('instagram_url', '#'); ?>" class="social-link">
-                                <i data-lucide="instagram"></i>
-                            </a>
-                            <a href="<?php echo get_theme_mod('linkedin_url', '#'); ?>" class="social-link">
-                                <i data-lucide="linkedin"></i>
-                            </a>
+                <!-- Блок 3: ИП данные -->
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Реквизиты</h3>
+                    
+                    <div class="company-info">
+                        <div class="company-item">
+                            <span class="company-label">ИП:</span>
+                            <span class="company-value">Бабушкин Кирилл Андреевич</span>
+                        </div>
+                        <div class="company-item">
+                            <span class="company-label">ИНН:</span>
+                            <span class="company-value">181900828280</span>
+                        </div>
+                        <div class="company-item">
+                            <span class="company-label">ОГРНИП:</span>
+                            <span class="company-value">323180000012342</span>
                         </div>
                     </div>
-
-                    <div class="footer-column">
-                        <h5 class="footer-column-title">Услуги</h5>
-                        <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'services',
-                            'container' => false,
-                            'menu_class' => 'footer-links-list',
-                            'fallback_cb' => false
-                        ));
-                        ?>
-                    </div>
-
-                    <div class="footer-column">
-                        <h5 class="footer-column-title">Компания</h5>
-                        <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'company',
-                            'container' => false,
-                            'menu_class' => 'footer-links-list',
-                            'fallback_cb' => false
-                        ));
-                        ?>
-                    </div>
-
-                    <div class="footer-column">
-                        <h5 class="footer-column-title">Поддержка</h5>
-                        <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'support',
-                            'container' => false,
-                            'menu_class' => 'footer-links-list',
-                            'fallback_cb' => false
-                        ));
-                        ?>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Bottom Section -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>&copy; <?php echo date('Y'); ?> НеРекламное агентство. Все права защищены.</p>
-                </div>
+    <!-- Bottom Section -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p>&copy; <?php echo date('Y'); ?> НеРекламное агентство. Все права защищены.</p>
+                <a href="<?php echo home_url('/privacy-policy'); ?>" class="footer-bottom-link">Политика конфиденциальности</a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <?php wp_footer(); ?>
-</body>
-</html>
+<?php wp_footer(); ?>

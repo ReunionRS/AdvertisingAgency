@@ -11,8 +11,16 @@
 
         <div class="services-grid">
             <?php
-            if (have_posts()) :
-                while (have_posts()) : the_post();
+            // Изменяем запрос для вывода всех услуг
+            $services_query = new WP_Query(array(
+                'post_type' => 'services',
+                'posts_per_page' => -1, // Выводим все услуги
+                'orderby' => 'menu_order',
+                'order' => 'ASC'
+            ));
+            
+            if ($services_query->have_posts()) :
+                while ($services_query->have_posts()) : $services_query->the_post();
                     $icon = get_post_meta(get_the_ID(), '_service_icon', true);
                     $details = get_post_meta(get_the_ID(), '_service_details', true);
                     $details_list = explode("\n", $details);
@@ -24,10 +32,10 @@
                         <h3 class="service-title"><?php the_title(); ?></h3>
                         <p class="service-description"><?php echo get_the_excerpt(); ?></p>
                         <div class="service-footer">
-                            <button class="service-more">
+                            <a href="<?php the_permalink(); ?>" class="service-more">
                                 Подробнее
                                 <i data-lucide="arrow-right"></i>
-                            </button>
+                            </a>
                             <i data-lucide="chevron-down" class="expand-icon"></i>
                         </div>
                         <div class="service-details">
@@ -43,12 +51,7 @@
                     </div>
                 <?php
                 endwhile;
-                
-                the_posts_pagination(array(
-                    'prev_text' => __('Назад', 'nereklamnoe'),
-                    'next_text' => __('Вперед', 'nereklamnoe'),
-                ));
-                
+                wp_reset_postdata();
             else :
                 echo '<p>Услуги не найдены.</p>';
             endif;
